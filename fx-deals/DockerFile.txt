@@ -1,0 +1,12 @@
+# Dockerfile
+
+FROM openjdk:8-jdk
+
+MAINTAINER Prerika <prerika11@gmail.com>
+ENV JAVA_VER 8
+
+COPY src ./src
+COPY pom.xml ./
+
+RUN mvn clean
+CMD [tomcat7:run]
